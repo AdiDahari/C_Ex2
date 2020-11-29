@@ -3,16 +3,16 @@
 #include <stdbool.h>
 #include "myBank.h"
 #define ACC "Please enter account number: "
-#define FAC "Failed to read the account number\n\n"
-#define FAM "Failed to read the amount\n\n"
+#define FAC "Failed to read the account number\n"
+#define FAM "Failed to read the amount\n"
 #define DEP "Please enter amount for deposit: "
-#define ITT "Invalid transaction type\n\n"
+#define ITT "Invalid transaction type\n"
 int main()
 {
     char input;
     do
     {
-        printf("Please choose a transaction type:\n \
+        printf("\nPlease choose a transaction type:\n \
 O-Open Account\n \
 B-Balance Inquiry\n \
 D-Deposit\n \
@@ -108,10 +108,10 @@ E-Exit\n");
         else if (input == 'I')
         {
             double rate;
-            printf("Please enter interest rate: \n");
+            printf("Please enter interest rate: ");
             if (scanf(" %lf", &rate) == false || rate <= 0)
             {
-                printf("Failed to read the interest rate\n\n");
+                printf("Failed to read the interest rate\n");
             }
             else
             {
