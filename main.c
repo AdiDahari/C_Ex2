@@ -30,20 +30,23 @@ E-Exit\n");
         {
             double amount;
             printf("Please enter amount for deposit: ");
-            if (scanf(" %lf", &amount) == true && amount > 0.0)
+            if (scanf(" %lf", &amount) == true)
             {
                 O(amount);
             }
-            else
-                printf(FAM);
+            else printf(FAM);
         }
         else if (input == 'B')
         {
             int num;
             printf(ACC);
-            if (scanf(" %d", &num) == false || num < 901 || num > 950)
+            if (scanf(" %d", &num) == false)
             {
                 printf(FAC);
+                continue;
+            }
+            else if(num < 901 || num > 950){
+                printf("Invalid account number\n");
                 continue;
             }
             else
@@ -54,50 +57,61 @@ E-Exit\n");
         else if (input == 'D')
         {
             int num;
-            double amount;
+            //double amount;
             printf(ACC);
-            if (scanf(" %d", &num) == false || num < 901 || num > 950)
+            if (scanf(" %d", &num) == false)
             {
                 printf(FAC);
                 continue;
             }
-            printf(DEP);
-            if (scanf(" %lf", &amount) == false || amount <= 0.0)
-            {
-                printf(FAM);
+            else if(num < 901 || num > 950){
+                printf("Invalid account number\n");
+                continue;
             }
+            // printf(DEP);
+            // if (scanf(" %lf", &amount) == false || amount <= 0.0)
+            // {
+            //     printf(FAM);
+            // }
             else
             {
-                D((num - 901), amount);
+                D((num - 901));
             }
         }
         else if (input == 'W')
         {
             int num;
-            double amount;
             printf(ACC);
-            if (scanf(" %d", &num) == false || num < 901 || num > 950)
+            if (scanf(" %d", &num) == false)
             {
                 printf(FAC);
                 continue;
             }
-            printf("Please enter the amount to withdraw: ");
-            if (scanf(" %lf", &amount) == false || amount <= 0.0)
-            {
-                printf(FAM);
+            else if(num < 901 || num > 950){
+                printf("Invalid account number\n");
+                continue;
             }
+            // printf("Please enter the amount to withdraw: ");
+            // if (scanf(" %lf", &amount) == false || amount <= 0.0)
+            // {
+            //     printf(FAM);
+            // }
             else
             {
-                W((num - 901), amount);
+                W((num - 901));
             }
         }
         else if (input == 'C')
         {
             int num;
             printf(ACC);
-            if (scanf(" %d", &num) == false || num < 901 || num > 950)
+            if (scanf(" %d", &num) == false)
             {
                 printf(FAC);
+                continue;
+            }
+            else if(num < 901 || num > 950){
+                printf("Invalid account number\n");
                 continue;
             }
             else
@@ -107,9 +121,9 @@ E-Exit\n");
         }
         else if (input == 'I')
         {
-            double rate;
+            int rate;
             printf("Please enter interest rate: ");
-            if (scanf(" %lf", &rate) == false || rate <= 0)
+            if (scanf(" %d", &rate) == false)
             {
                 printf("Failed to read the interest rate\n");
             }
