@@ -76,8 +76,9 @@ void C(int aNum){
 void I(int rate){
     if(rate <= 0) printf("Invalid interest rate\n");
     else{
+        double nRate = (double)rate;
         for(int i = 0; i < 50; i++){
-            if(bank[i][1] == true) bank[i][0] += ((rate/100) * bank[i][0]);
+            if(bank[i][1] == true) bank[i][0] += ((nRate/100.0) * bank[i][0]);
         }
    }
 }
