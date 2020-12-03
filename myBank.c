@@ -14,7 +14,7 @@ void O(double amount){
         bank[newNum][0] = amount;
         bank[newNum][1] = true;
         count++;
-        printf("New account number is: %d\n", (newNum+901));
+        printf("New account number is: %d \n", (newNum+901));
         
     }
     else{
@@ -57,7 +57,7 @@ void W(int aNum){
         // {
         //     printf("Cannot withdraw a negative amount\n");
         // }
-        else if(bank[aNum][0] < amount) printf("Cannot withdraw more than the balance");
+        else if(bank[aNum][0] < amount) printf("Cannot withdraw more than the balance\n");
         else{
         bank[aNum][0] = bank[aNum][0] - amount;
         printf("The new balance is: %0.2f\n", bank[aNum][0]);
